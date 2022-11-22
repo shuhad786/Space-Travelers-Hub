@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import rocketReducer from './rockets/rockets';
 
 const rootReducers = combineReducers({
-  // missions: missionReducer,
+
   rockets: rocketReducer,
 });
 
