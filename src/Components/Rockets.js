@@ -1,5 +1,5 @@
 const Rockets = () => (
-  <div className="row" />
+  <div className="">Rocket page</div>
 );
 
 export default Rockets;
