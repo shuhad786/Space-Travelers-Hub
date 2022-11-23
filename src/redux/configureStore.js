@@ -4,9 +4,10 @@ import {
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rocketReducer from './rockets/rockets';
+import missionReducer from './missions/missions';
 
 const rootReducers = combineReducers({
-
+  missions: missionReducer,
   rockets: rocketReducer,
 });
 
