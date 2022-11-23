@@ -3,11 +3,17 @@ import { useSelector } from 'react-redux';
 
 const MissionsList = () => {
   const missions = useSelector((state) => state.missions);
-  const reservedDisplay = missions.filter((mission) => (mission.reserved) === true);
+  const newState = missions.map((mission) => {
+    if (mission.mission_id !== mission.id) {
+      return mission;
+    }
+    return { ...mission, reserved: true };
+  });
+
   return (
     <ul>
-      {reservedDisplay.map((display) => (
-        <li key={display.id}>{display.mission_name}</li>
+      {newState.map((display) => (
+        <li key={display.mission_id}>{display.mission_name}</li>
       ))}
     </ul>
   );
