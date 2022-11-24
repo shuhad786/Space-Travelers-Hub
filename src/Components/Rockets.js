@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Rockets = ({ reserveRocketClick, cancelReserveClick }) => {
+const Rockets = ({ ReserveRocketClick, CancelReserveClick }) => {
   const rockets = useSelector((state) => state.rockets);
 
   return (
@@ -20,8 +20,8 @@ const Rockets = ({ reserveRocketClick, cancelReserveClick }) => {
                 {rocket.description}
 
               </p>
-              <button type="button" className="rockBtn" style={{ display: rocket.reserved ? 'none' : 'inline-block' }} onClick={() => reserveRocketClick(rocket)}>Reserve Rocket</button>
-              <button type="button" className="rockCancel" style={{ display: rocket.reserved ? 'inline-block' : 'none' }} onClick={() => cancelReserveClick(rocket)}>Cancel Reservation</button>
+              <button type="button" className="rocketBtn" style={{ display: rocket.reserved ? 'none' : 'inline-block' }} onClick={() => ReserveRocketClick(rocket)}>Reserve Rocket</button>
+              <button type="button" className="rockCancel" style={{ display: rocket.reserved ? 'inline-block' : 'none' }} onClick={() => CancelReserveClick(rocket)}>Cancel Reservation</button>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@ const Rockets = ({ reserveRocketClick, cancelReserveClick }) => {
   );
 };
 Rockets.propTypes = {
-  reserveRocketClick: PropTypes.func.isRequired,
-  cancelReserveClick: PropTypes.func.isRequired,
+  ReserveRocketClick: PropTypes.func.isRequired,
+  CancelReserveClick: PropTypes.func.isRequired,
 };
 
 export default Rockets;
