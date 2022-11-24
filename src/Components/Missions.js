@@ -13,10 +13,6 @@ const Missions = ({ joinMissionClick, cancelMissionClick }) => {
             <div className="">
               <h3>{mission.mission_name}</h3>
               <p>
-                this is the:
-                {mission.mission_id}
-              </p>
-              <p>
                 <span className="reserved" style={{ display: mission.reserved ? 'inline-block' : 'none' }}>Join</span>
                 {mission.description}
               </p>
