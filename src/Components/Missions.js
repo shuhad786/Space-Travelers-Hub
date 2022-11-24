@@ -8,7 +8,7 @@ const Missions = ({ joinMissionClick, cancelMissionClick }) => {
     <div className="">
       <hr />
       {missions.map((mission) => (
-        <div className="" key={mission.id}>
+        <div className="" key={mission.mission_id}>
           <div className="">
             <div className="">
               <h3>{mission.mission_name}</h3>
@@ -25,7 +25,6 @@ const Missions = ({ joinMissionClick, cancelMissionClick }) => {
               <button type="button" className="cancelBtn" style={{ display: mission.reserved ? 'inline-block' : 'none' }} onClick={() => cancelMissionClick(mission)}>
                 Leave Mission
               </button>
-
             </div>
           </div>
         </div>

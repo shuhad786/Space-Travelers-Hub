@@ -17,7 +17,6 @@ const Rockets = ({ reserveRocketClick, cancelReserveClick }) => {
               <h3>{rocket.rocket_name}</h3>
               <p>
                 <span className="badge rounded-pill text-light bg-info" style={{ display: rocket.reserved ? 'inline-block' : 'none' }}>RESERVED</span>
-
                 {rocket.description}
 
               </p>

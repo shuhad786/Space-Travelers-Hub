@@ -43,17 +43,23 @@ const missionReducer = (state = initialState, action) => {
     case DISPLAY_MISSION:
       return action.payload;
 
-    case JOIN_MISSION:
-      return state.map((mission) => {
-        if (mission.id !== action.payload.id) { return mission; }
-        return { ...mission, reserved: true };
-      });
+    case JOIN_MISSION: {
+      const updatedData = state.map((mission) => (
+        mission.mission_id === action.payload.mission_id
+          ? { ...mission, reserved: true }
+          : mission
+      ));
+      return updatedData;
+    }
 
-    case CANCEL_MISSION:
-      return state.map((mission) => {
-        if (mission.id !== action.payload.id) { return mission; }
-        return { ...mission, reserved: false };
-      });
+    case CANCEL_MISSION: {
+      const updatedData = state.map((mission) => (
+        mission.mission_id === action.payload.mission_id
+          ? { ...mission, reserved: false }
+          : mission
+      ));
+      return updatedData;
+    }
 
     default:
       return state;
