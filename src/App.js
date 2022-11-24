@@ -14,13 +14,14 @@ function App() {
   useEffect(() => {
     dispatch(displayRocket());
     dispatch(displayMission());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const reserveRocketClick = (rocket) => {
+  const ReserveRocketClick = (rocket) => {
     dispatch(reserveRocket(rocket));
   };
 
-  const cancelReserveClick = (rocket) => {
+  const CancelReserveClick = (rocket) => {
     dispatch(cancelReserve(rocket));
   };
 
@@ -35,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Rockets reserveRocketClick={reserveRocketClick} cancelReserveClick={cancelReserveClick} />} />
+        <Route path="/" element={<Rockets ReserveRocketClick={ReserveRocketClick} CancelReserveClick={CancelReserveClick} />} />
         <Route path="/missions" element={<Missions joinMissionClick={joinMissionClick} cancelMissionClick={cancelMissionClick} />} />
         <Route path="/my-profile" element={<Profiles />} />
       </Routes>
